@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+Sitemap: https://a-one-juice-sahiwal.vercel.app/sitemap.xml
+Host: https://a-one-juice-sahiwal.vercel.app

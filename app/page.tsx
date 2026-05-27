@@ -330,7 +330,7 @@ export default function Home() {
       </nav>
 
       {/* Navbar */}
-      <header id="navbar" ref={navRef as React.RefObject<HTMLElement>}>
+      <header id="navbar" ref={navRef as React.RefObject<HTMLElement>} role="banner" aria-label="A One Juice navigation">
         <a href="#hero" className="nav-brand" onClick={() => scrollTo('hero')}>
           <span className="a">A</span> <span className="one">ONE</span> <span className="juice">JUICE</span>
         </a>
@@ -349,8 +349,9 @@ export default function Home() {
         </button>
       </header>
 
+      <main id="main-content" aria-label="A One Juice & Ice Cream Sahiwal — Main Content">
       {/* ===== HERO SECTION ===== */}
-      <section id="hero">
+      <section id="hero" aria-label="Hero — A One Juice & Ice Cream Sahiwal">
         {/* Full-width background image carousel */}
         <div className="hero-bg-carousel">
           <div className="hero-bg-track" ref={heroBgRef}>
@@ -358,7 +359,7 @@ export default function Home() {
               <div key={i} className="hero-bg-slide">
                 <Image
                   src={unsplashUrl(slide.photo, 1920, 1080)}
-                  alt={slide.name}
+                  alt={`${slide.name} — fresh ${slide.category.toLowerCase()} at A One Juice Sahiwal`}
                   fill
                   sizes="100vw"
                   style={{ objectFit: 'cover', objectPosition: 'center' }}
@@ -464,7 +465,7 @@ export default function Home() {
       </section>
 
       {/* ===== MENU SECTION ===== */}
-      <section id="menu" className="section">
+      <section id="menu" className="section" aria-label="Menu — Fresh Juices, Shakes & Ice Cream in Sahiwal">
         <div className="container">
           <div className="section-header reveal from-bottom">
             <div className="section-tag">Our Menu</div>
@@ -506,7 +507,7 @@ export default function Home() {
                     <div className="list-card-img-wrap">
                       <Image
                         src={unsplashUrl(item.photo, 400, 300)}
-                        alt={item.name}
+                        alt={`${item.name} — fresh drink at A One Juice Sahiwal`}
                         width={400}
                         height={300}
                         style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
@@ -529,7 +530,7 @@ export default function Home() {
       </section>
 
       {/* ===== ORDER SECTION ===== */}
-      <section id="order" className="section">
+      <section id="order" className="section" aria-label="Order fresh juice via WhatsApp — A One Juice Sahiwal">
         <div className="order-aurora">
           <div className="aurora-blob aurora-blob-1" />
           <div className="aurora-blob aurora-blob-2" />
@@ -584,8 +585,10 @@ export default function Home() {
         </div>
       </section>
 
+      </main>
+
       {/* ===== FOOTER ===== */}
-      <footer id="footer">
+      <footer id="footer" aria-label="A One Juice Footer — Contact & Info">
         <div className="container">
           <div className="footer-grid reveal from-bottom">
             <div className="footer-brand-col">
@@ -649,7 +652,10 @@ export default function Home() {
                 <div className="footer-contact-item">
                   <span className="footer-contact-icon">📍</span>
                   <div className="footer-contact-text">
-                    <a href={MAPS_LINK} target="_blank" rel="noopener noreferrer">View Location on Google Maps</a>
+                    <address style={{ fontStyle: 'normal' }}>
+                      Main Bazar, Sahiwal,<br />Punjab, Pakistan
+                    </address>
+                    <a href={MAPS_LINK} target="_blank" rel="noopener noreferrer">View on Google Maps</a>
                   </div>
                 </div>
                 <div className="footer-contact-item">

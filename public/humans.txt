@@ -1,0 +1,13 @@
+/* TEAM */
+Name: A One Juice & Ice Cream
+Location: Sahiwal, Punjab, Pakistan
+Contact: +92 313 6010673
+
+/* SITE */
+Last update: 2026/05/27
+Language: English / Urdu
+Doctype: HTML5
+IDE: VS Code
+
+/* THANKS */
+Next.js, Vercel, Tailwind CSS, Unsplash
