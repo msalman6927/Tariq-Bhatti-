@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import FontLoader from "./FontLoader";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://a-one-juice-sahiwal.vercel.app";
 
@@ -189,15 +190,12 @@ export default function RootLayout({
   return (
     <html lang="en-PK">
       <head>
-        {/* Google Fonts — preconnect first, then non-blocking stylesheet */}
+        {/* DNS preconnect hints only — font stylesheet loaded async by FontLoader */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-        />
 
-        {/* JSON-LD structured data — plain <script> tags, no JS loader */}
+        {/* JSON-LD structured data — type="application/ld+json" is never executed
+            as JS by browsers; it is safe, inline, and zero render cost */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
@@ -211,7 +209,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(menuSchema) }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {/* FontLoader injects the Google Fonts stylesheet after hydration
+            so it never blocks the initial render on low-end devices */}
+        <FontLoader />
+        {children}
+      </body>
     </html>
   );
 }

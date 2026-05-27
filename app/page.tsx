@@ -173,7 +173,7 @@ export default function Home() {
 
   // Preloader — simple guaranteed timer, no conditions or dependencies
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
+    const timer = setTimeout(() => setLoading(false), 1500);
     return () => clearTimeout(timer);
   }, []);
 
