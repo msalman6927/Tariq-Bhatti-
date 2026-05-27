@@ -1,14 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
-
-const poppins = Poppins({
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-poppins",
-});
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://a-one-juice-sahiwal.vercel.app";
 
@@ -53,9 +44,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: SITE_URL,
-  },
+  alternates: { canonical: SITE_URL },
   openGraph: {
     type: "website",
     locale: "en_PK",
@@ -85,7 +74,7 @@ export const metadata: Metadata = {
   },
 };
 
-/* ── JSON-LD Structured Data ── */
+/* ── JSON-LD schemas ── */
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": ["FoodEstablishment", "LocalBusiness"],
@@ -93,10 +82,10 @@ const localBusinessSchema = {
   name: "A One Juice & Ice Cream",
   alternateName: "A One Juice Sahiwal",
   description:
-    "Premium fresh juice bar and ice cream shop in Sahiwal, Punjab, Pakistan, offering 50+ menu items including fresh fruit juices, power shakes, milk shakes, salads and coffee.",
+    "Premium fresh juice bar and ice cream shop in Sahiwal, Punjab, Pakistan, offering 50+ menu items.",
   url: SITE_URL,
   telephone: "+923136010673",
-  image: `${SITE_URL}/og-image.jpg`,
+  image: `${SITE_URL}/opengraph-image`,
   logo: `${SITE_URL}/icon-512.png`,
   priceRange: "Rs. 150 – Rs. 1200",
   servesCuisine: ["Fresh Juice", "Shakes", "Ice Cream", "Salads", "Soups", "Coffee"],
@@ -110,27 +99,17 @@ const localBusinessSchema = {
     postalCode: "57000",
     addressCountry: "PK",
   },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: "30.6682",
-    longitude: "73.0875",
-  },
+  geo: { "@type": "GeoCoordinates", latitude: "30.6682", longitude: "73.0875" },
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday", "Tuesday", "Wednesday", "Thursday",
-        "Friday", "Saturday", "Sunday",
-      ],
+      dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
       opens: "09:00",
       closes: "01:00",
     },
   ],
   hasMap: "https://maps.app.goo.gl/k8Le8ZCPxenc8uyv7",
-  sameAs: [
-    "https://wa.me/923136010673",
-    "https://maps.app.goo.gl/k8Le8ZCPxenc8uyv7",
-  ],
+  sameAs: ["https://wa.me/923136010673", "https://maps.app.goo.gl/k8Le8ZCPxenc8uyv7"],
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.8",
@@ -167,11 +146,11 @@ const menuSchema = {
       "@type": "MenuSection",
       name: "Special Juices",
       hasMenuItem: [
-        { "@type": "MenuItem", name: "Apple Juice", offers: { "@type": "Offer", price: "300", priceCurrency: "PKR" } },
-        { "@type": "MenuItem", name: "Strawberry Juice", offers: { "@type": "Offer", price: "350", priceCurrency: "PKR" } },
-        { "@type": "MenuItem", name: "Pineapple Juice", offers: { "@type": "Offer", price: "400", priceCurrency: "PKR" } },
-        { "@type": "MenuItem", name: "Orange Juice", offers: { "@type": "Offer", price: "150", priceCurrency: "PKR" } },
-        { "@type": "MenuItem", name: "Red Anaar Juice", offers: { "@type": "Offer", price: "800", priceCurrency: "PKR" } },
+        { "@type": "MenuItem", name: "Apple Juice",             offers: { "@type": "Offer", price: "300", priceCurrency: "PKR" } },
+        { "@type": "MenuItem", name: "Strawberry Juice",        offers: { "@type": "Offer", price: "350", priceCurrency: "PKR" } },
+        { "@type": "MenuItem", name: "Pineapple Juice",         offers: { "@type": "Offer", price: "400", priceCurrency: "PKR" } },
+        { "@type": "MenuItem", name: "Orange Juice",            offers: { "@type": "Offer", price: "150", priceCurrency: "PKR" } },
+        { "@type": "MenuItem", name: "Red Anaar Juice",         offers: { "@type": "Offer", price: "800", priceCurrency: "PKR" } },
         { "@type": "MenuItem", name: "Special Sharbat e Falsa", offers: { "@type": "Offer", price: "800", priceCurrency: "PKR" } },
       ],
     },
@@ -179,25 +158,25 @@ const menuSchema = {
       "@type": "MenuSection",
       name: "Power Shakes",
       hasMenuItem: [
-        { "@type": "MenuItem", name: "Power Shake", offers: { "@type": "Offer", price: "650", priceCurrency: "PKR" } },
+        { "@type": "MenuItem", name: "Power Shake",          offers: { "@type": "Offer", price: "650", priceCurrency: "PKR" } },
         { "@type": "MenuItem", name: "Kaju Badam Mix Shake", offers: { "@type": "Offer", price: "650", priceCurrency: "PKR" } },
-        { "@type": "MenuItem", name: "Dry Fruit Mix Shake", offers: { "@type": "Offer", price: "650", priceCurrency: "PKR" } },
+        { "@type": "MenuItem", name: "Dry Fruit Mix Shake",  offers: { "@type": "Offer", price: "650", priceCurrency: "PKR" } },
       ],
     },
     {
       "@type": "MenuSection",
       name: "Milk Shakes",
       hasMenuItem: [
-        { "@type": "MenuItem", name: "Mango Shake", offers: { "@type": "Offer", price: "200", priceCurrency: "PKR" } },
+        { "@type": "MenuItem", name: "Mango Shake",       offers: { "@type": "Offer", price: "200", priceCurrency: "PKR" } },
         { "@type": "MenuItem", name: "Banana Milk Shake", offers: { "@type": "Offer", price: "200", priceCurrency: "PKR" } },
-        { "@type": "MenuItem", name: "Strawberry Shake", offers: { "@type": "Offer", price: "200", priceCurrency: "PKR" } },
+        { "@type": "MenuItem", name: "Strawberry Shake",  offers: { "@type": "Offer", price: "200", priceCurrency: "PKR" } },
       ],
     },
     {
       "@type": "MenuSection",
       name: "Ice Cream",
       hasMenuItem: [
-        { "@type": "MenuItem", name: "Ice Cream 2 Scoop", offers: { "@type": "Offer", price: "190", priceCurrency: "PKR" } },
+        { "@type": "MenuItem", name: "Ice Cream 2 Scoop", offers: { "@type": "Offer", price: "190",  priceCurrency: "PKR" } },
         { "@type": "MenuItem", name: "Ice Cream 1 Liter", offers: { "@type": "Offer", price: "1000", priceCurrency: "PKR" } },
       ],
     },
@@ -208,28 +187,31 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-PK" className={poppins.variable}>
-      <body>
-        {children}
-        <Script
-          id="schema-local-business"
+    <html lang="en-PK">
+      <head>
+        {/* Google Fonts — preconnect first, then non-blocking stylesheet */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        />
+
+        {/* JSON-LD structured data — plain <script> tags, no JS loader */}
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-          strategy="afterInteractive"
         />
-        <Script
-          id="schema-website"
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-          strategy="afterInteractive"
         />
-        <Script
-          id="schema-menu"
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(menuSchema) }}
-          strategy="afterInteractive"
         />
-      </body>
+      </head>
+      <body>{children}</body>
     </html>
   );
 }
