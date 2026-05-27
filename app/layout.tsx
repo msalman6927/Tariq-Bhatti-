@@ -80,6 +80,9 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.webmanifest",
   category: "food",
+  verification: {
+    google: "ZfCezMdCkZXrHEmZU66Ms7jQj89GDAExYIVRb9dZFRg",
+  },
 };
 
 /* ── JSON-LD Structured Data ── */
