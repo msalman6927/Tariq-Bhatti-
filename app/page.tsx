@@ -160,7 +160,6 @@ const FRUIT_OFFSETS = [0.18, 2.43, 4.67, 1.73, 0.25, 4.96, 4.33, 0.74, 3.03, 3.2
 const FRUIT_SIZES   = [1.5, 2, 2.5, 1.5, 2, 2.5, 1.5, 2, 2.5, 1.5];
 
 export default function Home() {
-  const [loading, setLoading] = useState(true);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('special-juices');
   const [slideIndex, setSlideIndex] = useState(0);
@@ -170,12 +169,6 @@ export default function Home() {
   const progressRef = useRef<HTMLDivElement>(null);
   const backTopRef = useRef<HTMLButtonElement>(null);
   const navRef = useRef<HTMLElement>(null);
-
-  // Preloader — simple guaranteed timer, no conditions or dependencies
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1500);
-    return () => clearTimeout(timer);
-  }, []);
 
   // Background-preload all menu images while user is on hero section
   useEffect(() => {
@@ -286,15 +279,6 @@ export default function Home() {
 
   return (
     <>
-      {/* Preloader */}
-      <div id="preloader" className={loading ? '' : 'hidden'}>
-        <div className="preloader-brand">
-          <span className="a">A</span> <span className="one">ONE</span> <span className="juice">JUICE</span>
-        </div>
-        <div className="preloader-bar"><div className="preloader-fill" /></div>
-        <div className="preloader-spinner" />
-      </div>
-
       {/* Scroll Progress */}
       <div id="scroll-progress" ref={progressRef} />
 
