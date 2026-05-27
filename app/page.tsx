@@ -160,22 +160,20 @@ const FRUIT_OFFSETS = [0.18, 2.43, 4.67, 1.73, 0.25, 4.96, 4.33, 0.74, 3.03, 3.2
 const FRUIT_SIZES   = [1.5, 2, 2.5, 1.5, 2, 2.5, 1.5, 2, 2.5, 1.5];
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('special-juices');
   const [slideIndex, setSlideIndex] = useState(0);
   const [typeText, setTypeText] = useState('');
   const carouselRef = useRef<HTMLDivElement>(null);
   const heroBgRef = useRef<HTMLDivElement>(null);
-  const preloaderRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
   const backTopRef = useRef<HTMLButtonElement>(null);
   const navRef = useRef<HTMLElement>(null);
 
-  // Preloader
+  // Preloader — simple guaranteed timer, no conditions or dependencies
   useEffect(() => {
-    const timer = setTimeout(() => {
-      preloaderRef.current?.classList.add('hidden');
-    }, 2200);
+    const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -289,7 +287,7 @@ export default function Home() {
   return (
     <>
       {/* Preloader */}
-      <div id="preloader" ref={preloaderRef}>
+      <div id="preloader" className={loading ? '' : 'hidden'}>
         <div className="preloader-brand">
           <span className="a">A</span> <span className="one">ONE</span> <span className="juice">JUICE</span>
         </div>
