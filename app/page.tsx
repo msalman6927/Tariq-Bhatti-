@@ -650,7 +650,7 @@ export default function Home() {
         </div>
         <div className="footer-bottom">
           <div className="container">
-            © 2026 <span>A ONE JUICE</span>. All Rights Reserved. · Made with ❤️ in Sahiwal
+            © 2026 A ONE JUICE. All Rights Reserved. · Designed &amp; Developed by <a href="https://www.linkedin.com/in/muhammad-salman-rajpoot/" target="_blank" rel="noopener noreferrer" style={{color:'#FFD700',textDecoration:'none'}}>Muhammad Salman</a>
           </div>
         </div>
       </footer>
