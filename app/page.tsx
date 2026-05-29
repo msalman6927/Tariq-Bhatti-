@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
 const WA_LINK = 'https://wa.me/923136010673';
+const FOODPANDA_LINK = 'https://www.foodpanda.pk/restaurant/garg/a-one-juice-point';
 const MAPS_LINK = 'https://maps.app.goo.gl/k8Le8ZCPxenc8uyv7';
 
 const HERO_SLIDES = [
@@ -307,7 +308,7 @@ export default function Home() {
           <a href="#hero" onClick={() => scrollTo('hero')}><span className="sidebar-icon">🏠</span> Home</a>
           <a href="#menu" onClick={() => scrollTo('menu')}><span className="sidebar-icon">🍹</span> Menu</a>
           <a href="#footer" onClick={() => scrollTo('footer')}><span className="sidebar-icon">📞</span> Contact</a>
-          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="sidebar-order"><span className="sidebar-icon">📲</span> Place Order</a>
+          <a href={FOODPANDA_LINK} target="_blank" rel="noopener noreferrer" className="sidebar-order"><span className="sidebar-icon">🛵</span> Place Order</a>
         </div>
       </nav>
 
@@ -320,7 +321,7 @@ export default function Home() {
           <li><a href="#hero" onClick={e => { e.preventDefault(); scrollTo('hero'); }}>Home</a></li>
           <li><a href="#menu" onClick={e => { e.preventDefault(); scrollTo('menu'); }}>Menu</a></li>
           <li><a href="#footer" onClick={e => { e.preventDefault(); scrollTo('footer'); }}>Contact</a></li>
-          <li><a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="nav-order-btn">Place Order</a></li>
+          <li><a href={FOODPANDA_LINK} target="_blank" rel="noopener noreferrer" className="nav-order-btn">Place Order</a></li>
         </ul>
         <button
           className={`hamburger ${sidebarOpen ? 'open' : ''}`}
@@ -393,8 +394,8 @@ export default function Home() {
               crafted with the finest ingredients for an unforgettable taste experience.
             </p>
             <div className="hero-btns">
-              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary">
-                <span>📲</span><span>Place Order on WhatsApp</span>
+              <a href={FOODPANDA_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                <span>🛵</span><span>Place Order</span>
               </a>
               <button className="btn-secondary" onClick={() => scrollTo('menu')}>
                 <span>🍹</span><span>Explore Menu</span>
@@ -427,7 +428,7 @@ export default function Home() {
                   <div className="slide-name">{slide.name}</div>
                   <div className="slide-desc">{slide.desc}</div>
                   <div className="slide-price">{slide.price} <span>{slide.priceUnit}</span></div>
-                  <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontSize: '0.85rem', padding: '10px 20px', marginTop: '4px' }}>
+                  <a href={FOODPANDA_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontSize: '0.85rem', padding: '10px 20px', marginTop: '4px' }}>
                     <span>Order Now</span>
                   </a>
                 </div>
@@ -480,7 +481,7 @@ export default function Home() {
                 {cat.items.map((item, idx) => (
                   <a
                     key={idx}
-                    href={WA_LINK}
+                    href={FOODPANDA_LINK}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="menu-list-card reveal from-bottom"
@@ -501,7 +502,6 @@ export default function Home() {
                     <div className="list-card-body">
                       <div className="list-card-name">{item.name}</div>
                       {renderPrice(item.price)}
-                      <span className="list-card-order">📲 Order Now</span>
                     </div>
                   </a>
                 ))}
@@ -512,7 +512,7 @@ export default function Home() {
       </section>
 
       {/* ===== ORDER SECTION ===== */}
-      <section id="order" className="section" aria-label="Order fresh juice via WhatsApp — A One Juice Sahiwal">
+      <section id="order" className="section" aria-label="Order fresh juice via FoodPanda — A One Juice Sahiwal">
         <div className="order-aurora">
           <div className="aurora-blob aurora-blob-1" />
           <div className="aurora-blob aurora-blob-2" />
@@ -527,8 +527,8 @@ export default function Home() {
                 <span className="red">Delicious</span> Anytime
               </h2>
               <p className="order-desc">
-                Skip the queue — place your order directly via WhatsApp and get fresh juices
-                &amp; ice cream delivered or ready for pickup in minutes.
+                Skip the queue — place your order on FoodPanda and get fresh juices
+                &amp; ice cream delivered to your doorstep in minutes.
               </p>
               <div className="order-features">
                 <div className="order-feature">
@@ -550,13 +550,13 @@ export default function Home() {
               </div>
             </div>
             <div className="order-card reveal from-right">
-              <div className="order-wa-icon">💬</div>
-              <div className="order-card-title">Order via WhatsApp</div>
+              <div className="order-wa-icon">🛵</div>
+              <div className="order-card-title">Order via FoodPanda</div>
               <p className="order-card-desc">
-                Message us your order and we&apos;ll have it ready fresh for you!
+                Place your order on FoodPanda and get fresh juices delivered to your doorstep!
               </p>
-              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="wa-btn">
-                <span>📲</span> Place Order Now
+              <a href={FOODPANDA_LINK} target="_blank" rel="noopener noreferrer" className="wa-btn">
+                <span>🛵</span> Place Order Now
               </a>
               <div className="order-phone">
                 <div className="order-phone-num">📞 <a href="tel:+923136010673">+92 313 6010673</a></div>
@@ -600,7 +600,7 @@ export default function Home() {
                 <li><a href="#hero" onClick={e => { e.preventDefault(); scrollTo('hero'); }}>Home</a></li>
                 <li><a href="#menu" onClick={e => { e.preventDefault(); scrollTo('menu'); }}>Menu</a></li>
                 <li><a href="#footer" onClick={e => { e.preventDefault(); scrollTo('footer'); }}>Contact</a></li>
-                <li><a href={WA_LINK} target="_blank" rel="noopener noreferrer">Place Order</a></li>
+                <li><a href={FOODPANDA_LINK} target="_blank" rel="noopener noreferrer">Place Order</a></li>
               </ul>
             </div>
 
