@@ -3,5 +3,5 @@ Allow: /
 Disallow: /api/
 Disallow: /_next/
 
-Sitemap: https://a-one-juice-sahiwal.vercel.app/sitemap.xml
-Host: https://a-one-juice-sahiwal.vercel.app
+Sitemap: https://tariq-ahmed-bhatti-sahiwal.vercel.app/sitemap.xml
+Host: https://tariq-ahmed-bhatti-sahiwal.vercel.app

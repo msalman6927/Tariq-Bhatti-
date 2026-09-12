@@ -1,127 +1,22 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "A One Juice & Ice Cream — Best Fresh Juice Shop in Sahiwal, Pakistan";
+export const alt = "Tariq Ahmed Bhatti | Sahiwal Chamber Elections 2026-28";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default function OGImage() {
   return new ImageResponse(
     (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          background: "linear-gradient(135deg, #080810 0%, #0c0c20 50%, #080810 100%)",
-          fontFamily: "sans-serif",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        {/* Background glow blobs */}
-        <div
-          style={{
-            position: "absolute",
-            top: -100,
-            left: -100,
-            width: 500,
-            height: 500,
-            borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(255,215,0,0.18) 0%, transparent 70%)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            bottom: -80,
-            right: -80,
-            width: 400,
-            height: 400,
-            borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(230,57,70,0.18) 0%, transparent 70%)",
-          }}
-        />
-
-        {/* Decorative fruit emojis */}
-        <div style={{ position: "absolute", top: 40, left: 60, fontSize: 72, opacity: 0.25 }}>🍊</div>
-        <div style={{ position: "absolute", top: 80, right: 80, fontSize: 60, opacity: 0.20 }}>🥭</div>
-        <div style={{ position: "absolute", bottom: 60, left: 100, fontSize: 56, opacity: 0.20 }}>🍓</div>
-        <div style={{ position: "absolute", bottom: 40, right: 60, fontSize: 64, opacity: 0.25 }}>🍍</div>
-
-        {/* Main content */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: 16,
-            zIndex: 1,
-          }}
-        >
-          {/* Brand name */}
-          <div
-            style={{
-              fontSize: 96,
-              fontWeight: 900,
-              letterSpacing: "4px",
-              display: "flex",
-              gap: 12,
-              lineHeight: 1,
-            }}
-          >
-            <span style={{ color: "#FFD700" }}>A</span>
-            <span style={{ color: "#E63946" }}>ONE</span>
-            <span style={{ color: "#FFD700" }}>JUICE</span>
-          </div>
-
-          {/* Subtitle */}
-          <div style={{ fontSize: 32, color: "rgba(255,255,255,0.75)", fontWeight: 400, letterSpacing: "2px" }}>
-            &amp; Ice Cream
-          </div>
-
-          {/* Divider */}
-          <div
-            style={{
-              width: 180,
-              height: 4,
-              borderRadius: 99,
-              background: "linear-gradient(90deg, #FFD700, #E63946)",
-              margin: "8px 0",
-            }}
-          />
-
-          {/* Tagline */}
-          <div style={{ fontSize: 28, color: "rgba(255,255,255,0.85)", textAlign: "center", maxWidth: 700, lineHeight: 1.4, fontWeight: 400 }}>
-            Premium Fresh Juices, Shakes &amp; Ice Cream
-          </div>
-
-          {/* Location badge */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 10,
-              background: "rgba(255,215,0,0.12)",
-              border: "1px solid rgba(255,215,0,0.35)",
-              borderRadius: 40,
-              padding: "10px 28px",
-              marginTop: 8,
-            }}
-          >
-            <span style={{ fontSize: 22 }}>📍</span>
-            <span style={{ color: "#FFD700", fontSize: 22, fontWeight: 600, letterSpacing: "1px" }}>
-              Sahiwal, Punjab, Pakistan
-            </span>
-          </div>
-
-          {/* WhatsApp CTA */}
-          <div style={{ fontSize: 20, color: "rgba(255,255,255,0.55)", marginTop: 8 }}>
-            📲 Order on WhatsApp · 50+ Menu Items
-          </div>
+      <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "linear-gradient(135deg, #07172d 0%, #0b2240 55%, #050d1b 100%)", color: "white", fontFamily: "sans-serif", position: "relative" }}>
+        <div style={{ position: "absolute", inset: 42, border: "2px solid rgba(212,175,55,0.55)", display: "flex" }} />
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 18, zIndex: 1 }}>
+          <div style={{ fontSize: 82, fontWeight: 900, letterSpacing: "5px", display: "flex" }}><span style={{ color: "#d4af37" }}>TARIQ</span><span style={{ color: "white", marginLeft: 18 }}>AHMED BHATTI</span></div>
+          <div style={{ width: 190, height: 4, background: "#d4af37", display: "flex" }} />
+          <div style={{ fontSize: 38, color: "#f0d878", letterSpacing: "2px", display: "flex" }}>SAHIWAL CHAMBER ELECTIONS 2026-28</div>
+          <div style={{ fontSize: 27, color: "rgba(255,255,255,0.86)", display: "flex" }}>Executive Committee Member · Associate Class</div>
+          <div style={{ marginTop: 12, fontSize: 29, color: "white", display: "flex" }}>Tajiron ki Awaaz, Sahiwal ki Tarraqi!</div>
+          <div style={{ marginTop: 16, fontSize: 22, color: "#d4af37", display: "flex" }}>Owner of Boby Shoes · Ittehad Group · Democratic Group · Apna Group</div>
         </div>
       </div>
     ),

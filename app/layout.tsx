@@ -2,219 +2,86 @@ import type { Metadata } from "next";
 import "./globals.css";
 import FontLoader from "./FontLoader";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://a-one-juice-sahiwal.vercel.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://tariq-ahmed-bhatti-sahiwal.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "A One Juice & Ice Cream Sahiwal | Fresh Juices, Shakes & More",
-    template: "%s | A One Juice Sahiwal",
+    default: "Tariq Ahmed Bhatti | Sahiwal Chamber Elections 2026-28",
+    template: "%s | Tariq Ahmed Bhatti Campaign",
   },
-  description:
-    "Best fresh juice shop in Sahiwal, Punjab, Pakistan. Enjoy 50+ items: fresh fruit juices, power shakes, milk shakes, ice cream, salads & coffee. Order on WhatsApp.",
+  description: "Vote and support Tariq Ahmed Bhatti, Owner of Boby Shoes, for Executive Committee Member (Associate Class) in Sahiwal Chamber Elections 2026-28.",
   keywords: [
-    "juice shop Sahiwal",
-    "fresh juice Sahiwal",
-    "A One Juice Sahiwal",
-    "best juice Sahiwal",
-    "mango juice Sahiwal",
-    "orange juice Sahiwal",
-    "fruit juice Pakistan",
-    "healthy drinks Sahiwal",
-    "ice cream Sahiwal",
-    "milk shake Sahiwal",
-    "power shake Sahiwal",
-    "fresh drinks Punjab",
-    "juice bar Pakistan",
-    "falsa juice Sahiwal",
-    "anaar juice Sahiwal",
-    "WhatsApp juice order Sahiwal",
-    "اے ون جوس ساہیوال",
+    "Tariq Ahmed Bhatti", "Sahiwal Chamber Elections 2026-28", "SLCCI election",
+    "Boby Shoes Sahiwal", "Sahiwal business community", "Executive Committee Member",
+    "Associate Class", "Ittehad Group", "Democratic Group", "Apna Group",
   ],
-  authors: [{ name: "A One Juice & Ice Cream", url: SITE_URL }],
-  creator: "A One Juice & Ice Cream",
-  publisher: "A One Juice & Ice Cream",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+  authors: [{ name: "Tariq Ahmed Bhatti", url: SITE_URL }],
+  creator: "Tariq Ahmed Bhatti Campaign",
+  publisher: "Tariq Ahmed Bhatti Campaign",
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } },
   alternates: { canonical: SITE_URL },
   openGraph: {
-    type: "website",
-    locale: "en_PK",
-    url: SITE_URL,
-    siteName: "A One Juice & Ice Cream Sahiwal",
-    title: "A One Juice & Ice Cream Sahiwal | Fresh Juices & Shakes",
-    description:
-      "Best fresh juice shop in Sahiwal, Punjab. 50+ items including fruit juices, power shakes, milk shakes, ice cream & more. Order on WhatsApp!",
+    type: "website", locale: "en_PK", url: SITE_URL, siteName: "Tariq Ahmed Bhatti Campaign",
+    title: "Tariq Ahmed Bhatti | Sahiwal Chamber Elections 2026-28",
+    description: "Tajiron ki Awaaz, Sahiwal ki Tarraqi! Vote and support Tariq Ahmed Bhatti for SLCCI Executive Committee Member.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "A One Juice & Ice Cream Sahiwal | Fresh Juices & Shakes",
-    description:
-      "Best fresh juice shop in Sahiwal, Punjab. 50+ items. Order on WhatsApp!",
+    title: "Tariq Ahmed Bhatti | Sahiwal Chamber Elections 2026-28",
+    description: "Vote and support Tariq Ahmed Bhatti, Owner of Boby Shoes, for SLCCI Executive Committee Member.",
   },
-  icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
-  },
+  icons: { icon: [{ url: "/favicon.ico" }, { url: "/icon-192.png", sizes: "192x192", type: "image/png" }], apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }] },
   manifest: "/manifest.webmanifest",
-  category: "food",
-  verification: {
-    google: "ZfCezMdCkZXrHEmZU66Ms7jQj89GDAExYIVRb9dZFRg",
-  },
+  category: "business",
 };
 
-/* ── JSON-LD schemas ── */
-const localBusinessSchema = {
+const candidateSchema = {
   "@context": "https://schema.org",
-  "@type": ["FoodEstablishment", "LocalBusiness"],
-  "@id": `${SITE_URL}/#business`,
-  name: "A One Juice & Ice Cream",
-  alternateName: "A One Juice Sahiwal",
-  description:
-    "Premium fresh juice bar and ice cream shop in Sahiwal, Punjab, Pakistan, offering 50+ menu items.",
+  "@type": "Person",
+  "@id": `${SITE_URL}/#candidate`,
+  name: "Tariq Ahmed Bhatti",
+  jobTitle: "Owner of Boby Shoes",
+  description: "Candidate for Executive Committee Member (Associate Class) in Sahiwal Chamber Elections 2026-28.",
+  address: { "@type": "PostalAddress", addressLocality: "Sahiwal", addressRegion: "Punjab", addressCountry: "PK" },
+  sameAs: [`${SITE_URL}/`, "https://wa.me/923009696293"],
+};
+
+const campaignSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#campaign`,
+  name: "Tariq Ahmed Bhatti Campaign",
+  description: "Campaign for Tariq Ahmed Bhatti in Sahiwal Chamber Elections 2026-28.",
   url: SITE_URL,
-  telephone: "+923136010673",
-  image: `${SITE_URL}/opengraph-image`,
-  logo: `${SITE_URL}/icon-512.png`,
-  priceRange: "Rs. 150 – Rs. 1200",
-  servesCuisine: ["Fresh Juice", "Shakes", "Ice Cream", "Salads", "Soups", "Coffee"],
-  currenciesAccepted: "PKR",
-  paymentAccepted: "Cash, Easypaisa, JazzCash",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Main Bazar",
-    addressLocality: "Sahiwal",
-    addressRegion: "Punjab",
-    postalCode: "57000",
-    addressCountry: "PK",
-  },
-  geo: { "@type": "GeoCoordinates", latitude: "30.6682", longitude: "73.0875" },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-      opens: "09:00",
-      closes: "01:00",
-    },
-  ],
-  hasMap: "https://maps.app.goo.gl/k8Le8ZCPxenc8uyv7",
-  sameAs: ["https://wa.me/923136010673", "https://maps.app.goo.gl/k8Le8ZCPxenc8uyv7"],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    reviewCount: "120",
-    bestRating: "5",
-    worstRating: "1",
-  },
+  founder: { "@id": `${SITE_URL}/#candidate` },
+  areaServed: { "@type": "City", name: "Sahiwal" },
+  memberOf: { "@type": "Organization", name: "Sahiwal Chamber of Commerce & Industry" },
+  sameAs: ["https://wa.me/923009696293"],
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": `${SITE_URL}/#website`,
-  name: "A One Juice & Ice Cream Sahiwal",
+  name: "Tariq Ahmed Bhatti Campaign",
   url: SITE_URL,
-  description: "Best fresh juice shop in Sahiwal, Punjab, Pakistan.",
-  inLanguage: "en-PK",
-  publisher: { "@id": `${SITE_URL}/#business` },
-  potentialAction: {
-    "@type": "SearchAction",
-    target: { "@type": "EntryPoint", urlTemplate: `${SITE_URL}/?s={search_term_string}` },
-    "query-input": "required name=search_term_string",
-  },
+  description: "Tajiron ki Awaaz, Sahiwal ki Tarraqi!",
+  inLanguage: ["en-PK", "ur"],
+  publisher: { "@id": `${SITE_URL}/#campaign` },
 };
 
-const menuSchema = {
-  "@context": "https://schema.org",
-  "@type": "Menu",
-  "@id": `${SITE_URL}/#menu`,
-  name: "A One Juice Menu",
-  description: "Full menu of fresh juices, shakes, ice cream and more at A One Juice Sahiwal.",
-  hasMenuSection: [
-    {
-      "@type": "MenuSection",
-      name: "Special Juices",
-      hasMenuItem: [
-        { "@type": "MenuItem", name: "Apple Juice",             offers: { "@type": "Offer", price: "300", priceCurrency: "PKR" } },
-        { "@type": "MenuItem", name: "Strawberry Juice",        offers: { "@type": "Offer", price: "350", priceCurrency: "PKR" } },
-        { "@type": "MenuItem", name: "Pineapple Juice",         offers: { "@type": "Offer", price: "400", priceCurrency: "PKR" } },
-        { "@type": "MenuItem", name: "Orange Juice",            offers: { "@type": "Offer", price: "150", priceCurrency: "PKR" } },
-        { "@type": "MenuItem", name: "Red Anaar Juice",         offers: { "@type": "Offer", price: "800", priceCurrency: "PKR" } },
-        { "@type": "MenuItem", name: "Special Sharbat e Falsa", offers: { "@type": "Offer", price: "800", priceCurrency: "PKR" } },
-      ],
-    },
-    {
-      "@type": "MenuSection",
-      name: "Power Shakes",
-      hasMenuItem: [
-        { "@type": "MenuItem", name: "Power Shake",          offers: { "@type": "Offer", price: "650", priceCurrency: "PKR" } },
-        { "@type": "MenuItem", name: "Kaju Badam Mix Shake", offers: { "@type": "Offer", price: "650", priceCurrency: "PKR" } },
-        { "@type": "MenuItem", name: "Dry Fruit Mix Shake",  offers: { "@type": "Offer", price: "650", priceCurrency: "PKR" } },
-      ],
-    },
-    {
-      "@type": "MenuSection",
-      name: "Milk Shakes",
-      hasMenuItem: [
-        { "@type": "MenuItem", name: "Mango Shake",       offers: { "@type": "Offer", price: "200", priceCurrency: "PKR" } },
-        { "@type": "MenuItem", name: "Banana Milk Shake", offers: { "@type": "Offer", price: "200", priceCurrency: "PKR" } },
-        { "@type": "MenuItem", name: "Strawberry Shake",  offers: { "@type": "Offer", price: "200", priceCurrency: "PKR" } },
-      ],
-    },
-    {
-      "@type": "MenuSection",
-      name: "Ice Cream",
-      hasMenuItem: [
-        { "@type": "MenuItem", name: "Ice Cream 2 Scoop", offers: { "@type": "Offer", price: "190",  priceCurrency: "PKR" } },
-        { "@type": "MenuItem", name: "Ice Cream 1 Liter", offers: { "@type": "Offer", price: "1000", priceCurrency: "PKR" } },
-      ],
-    },
-  ],
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-PK">
       <head>
-        {/* DNS preconnect hints only — font stylesheet loaded async by FontLoader */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
-        {/* JSON-LD structured data — type="application/ld+json" is never executed
-            as JS by browsers; it is safe, inline, and zero render cost */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(menuSchema) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(candidateSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(campaignSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       </head>
-      <body>
-        {/* FontLoader injects the Google Fonts stylesheet after hydration
-            so it never blocks the initial render on low-end devices */}
-        <FontLoader />
-        {children}
-      </body>
+      <body><FontLoader />{children}</body>
     </html>
   );
 }

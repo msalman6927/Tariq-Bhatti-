@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --yellow: #FFD700;
-  --yellow-light: #FFE44D;
-  --red: #E63946;
-  --red-dark: #C1121F;
-  --bg-dark: #080810;
+  --yellow: #d4af37;
+  --yellow-light: #f0d878;
+  --red: #d4af37;
+  --red-dark: #9b7a18;
+  --bg-dark: #07172d;
   --bg-card: rgba(255,255,255,0.04);
   --bg-glass: rgba(255,255,255,0.07);
   --border-glass: rgba(255,255,255,0.12);
   --text-primary: #ffffff;
   --text-secondary: #b0b0c0;
-  --shadow-glow-yellow: 0 0 30px rgba(255,215,0,0.3);
-  --shadow-glow-red: 0 0 30px rgba(230,57,70,0.3);
+  --shadow-glow-yellow: 0 0 30px rgba(212,175,55,0.3);
+  --shadow-glow-red: 0 0 30px rgba(212,175,55,0.25);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -79,7 +79,6 @@ body {
 .nav-brand { font-size: 1.15rem; font-weight: 900; letter-spacing: 2px; text-decoration: none; }
 .nav-brand .a { color: var(--yellow); }
 .nav-brand .one { color: var(--red); }
-.nav-brand .juice { color: var(--yellow); }
 
 .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
 .nav-links a {
@@ -142,7 +141,6 @@ body {
 .sidebar-brand { font-size: 1.5rem; font-weight: 900; text-decoration: none; }
 .sidebar-brand .a { color: var(--yellow); }
 .sidebar-brand .one { color: var(--red); }
-.sidebar-brand .juice { color: var(--yellow); }
 
 .sidebar-close {
   width: 36px; height: 36px; border-radius: 50%;
@@ -252,7 +250,6 @@ body {
 .hero-title { font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; }
 .hero-title .brand-a { color: var(--yellow); }
 .hero-title .brand-one { color: var(--red); }
-.hero-title .brand-juice { color: var(--yellow); }
 .hero-title .subtitle { display: block; font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 400; color: var(--text-secondary); margin-top: 8px; }
 
 .hero-typewriter {
@@ -360,22 +357,7 @@ body {
   display: flex; align-items: center; justify-content: center;
   transition: all 0.2s ease; backdrop-filter: blur(10px);
 }
-.carousel-btn:hover { background: rgba(255,215,0,0.2); border-color: var(--yellow); }
-
-/* FLOATING FRUITS */
-.floating-fruits {
-  position: absolute; inset: 0; z-index: 3; pointer-events: none; overflow: hidden;
-}
-.floating-fruit {
-  position: absolute; font-size: 2rem; opacity: 0.15;
-  animation: floatFruit linear infinite;
-}
-@keyframes floatFruit {
-  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-  10% { opacity: 0.15; }
-  90% { opacity: 0.15; }
-  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
-}
+.carousel-btn:hover { background: rgba(212,175,55,0.2); border-color: var(--yellow); }
 
 /* ========== SECTION BASE ========== */
 .section { padding: 100px 0; position: relative; }
@@ -566,7 +548,6 @@ footer::before {
 .footer-brand { font-size: 2rem; font-weight: 900; letter-spacing: 2px; text-decoration: none; display: inline-block; margin-bottom: 16px; }
 .footer-brand .a { color: var(--yellow); }
 .footer-brand .one { color: var(--red); }
-.footer-brand .juice { color: var(--yellow); }
 .footer-tagline { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; max-width: 260px; margin-bottom: 24px; }
 .footer-social { display: flex; gap: 12px; }
 .social-btn {
@@ -686,6 +667,43 @@ footer::before {
   transition: all 0.25s ease;
 }
 .menu-list-card:hover .list-card-order { opacity: 1; transform: translateY(0); }
+
+/* Campaign profile and agenda surfaces */
+.candidate-profile {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 42px; align-items: center;
+  margin: 0 auto 72px; max-width: 1080px;
+}
+.candidate-photo { overflow: hidden; border-radius: 20px; border: 1px solid rgba(212,175,55,0.25); box-shadow: 0 24px 60px rgba(0,0,0,0.35); }
+.candidate-photo img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+.candidate-photo:hover img { transform: scale(1.04); }
+.candidate-copy { display: flex; flex-direction: column; gap: 18px; }
+.candidate-copy h3 { font-size: clamp(1.6rem, 3vw, 2.3rem); line-height: 1.15; }
+.candidate-copy p, .agenda-description { color: var(--text-secondary); line-height: 1.8; }
+.candidate-meta { display: flex; flex-direction: column; gap: 4px; padding-top: 10px; border-top: 1px solid var(--border-glass); }
+.candidate-meta span { color: var(--yellow); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+.agenda-heading { margin-top: 18px; }
+.agenda-grid { grid-template-columns: minmax(0, 720px); justify-content: center; }
+.agenda-card { width: 100%; }
+.agenda-description { margin-top: 8px; font-size: 0.92rem; }
+.alliance-image { width: 100%; height: 180px; object-fit: cover; border-radius: 16px; margin-bottom: 18px; }
+.order-card .hero-btns { position: relative; z-index: 1; }
+.order-card .btn-secondary { padding: 12px 22px; font-size: 0.9rem; }
+.footer-links span { color: var(--text-secondary); font-size: 0.88rem; }
+
+/* Campaign palette overrides preserve the original effect geometry. */
+.hero-bg-overlay { background: linear-gradient(105deg, rgba(7,23,45,0.94) 0%, rgba(7,23,45,0.76) 40%, rgba(7,23,45,0.48) 65%, rgba(7,23,45,0.78) 100%), linear-gradient(to bottom, rgba(7,23,45,0.58) 0%, transparent 25%, transparent 75%, rgba(7,23,45,0.82) 100%); }
+.hero-mesh { background-image: radial-gradient(circle at 20% 30%, rgba(212,175,55,0.09) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(11,34,64,0.2) 0%, transparent 40%); }
+#menu { background: linear-gradient(180deg, #07172d 0%, #0b2240 50%, #07172d 100%); }
+.btn-primary, .nav-order-btn, .sidebar-links a.sidebar-order, .wa-btn { background: linear-gradient(135deg, var(--yellow), var(--red-dark)) !important; }
+.btn-primary::before { background: linear-gradient(135deg, var(--yellow-light), var(--red-dark)); }
+.aurora-blob-1, .aurora-blob-2, .aurora-blob-3 { background: radial-gradient(ellipse, rgba(212,175,55,0.28) 0%, transparent 70%); }
+.red, .hero-title .brand-one, .nav-brand .one, .sidebar-brand .one, .footer-brand .one { color: var(--yellow) !important; }
+.hero-title .brand-a, .nav-brand .a, .sidebar-brand .a, .footer-brand .a { color: #fff !important; }
+
+@media (max-width: 768px) {
+  .candidate-profile { grid-template-columns: 1fr; gap: 28px; margin-bottom: 54px; }
+  .candidate-photo { max-height: 300px; }
+}
 
 /* ========== PARALLAX ========== */
 .parallax-el { will-change: transform; }

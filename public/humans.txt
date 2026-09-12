@@ -1,11 +1,11 @@
 /* TEAM */
-Name: A One Juice & Ice Cream
+Name: Tariq Ahmed Bhatti Campaign
 Location: Sahiwal, Punjab, Pakistan
-Contact: +92 313 6010673
+Contact: +92 300 9696293
 
 /* SITE */
 Last update: 2026/05/27
-Language: English / Urdu
+Language: English / Urdu / Roman Urdu
 Doctype: HTML5
 IDE: VS Code
 

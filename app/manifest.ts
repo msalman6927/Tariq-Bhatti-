@@ -2,16 +2,16 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "A One Juice & Ice Cream Sahiwal",
-    short_name: "A One Juice",
+    name: "Tariq Ahmed Bhatti Campaign | Sahiwal Chamber Elections 2026-28",
+    short_name: "Tariq Ahmed Bhatti",
     description:
-      "Fresh juices, power shakes, milk shakes, ice cream & more in Sahiwal, Punjab, Pakistan.",
+      "Vote and support Tariq Ahmed Bhatti for Sahiwal Chamber Elections 2026-28.",
     start_url: "/",
     display: "standalone",
-    background_color: "#080810",
-    theme_color: "#FFD700",
+    background_color: "#07172d",
+    theme_color: "#d4af37",
     orientation: "portrait",
-    categories: ["food", "drink", "lifestyle"],
+    categories: ["business", "politics"],
     lang: "en-PK",
     icons: [
       {
