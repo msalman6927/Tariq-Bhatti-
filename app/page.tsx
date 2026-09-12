@@ -11,8 +11,8 @@ const AGENDA = [
   { id: 'growth', label: 'Economic Growth', icon: '↗', title: 'Economic Growth & Facilitation', text: 'Local businesses ke liye naye commercial mauqa paida karna aur tax/regulatory masail mein legal support dena.', image: '/Agenda 3 - Economic Growth & Market Success.jpg' },
 ];
 const SLIDES = [
-  { name: 'Tajiron ki Awaaz', category: 'Sahiwal Chamber Elections 2026-28', text: `Vote & Support ${CANDIDATE} (Boby Shoes). Slogan: Tajiron ki Awaaz, Sahiwal ki Tarraqi!` },
-  { name: 'Sahiwal ki Tarraqi', category: 'Executive Committee Member', text: 'Ittehad Group, Democratic Group aur Apna Group ke saath business community ki mazboot numayindagi.' },
+  { name: 'Tajiron ki Awaaz', category: 'Sahiwal Chamber Elections 2026-28', text: `Vote & Support ${CANDIDATE} (Boby Shoes). Slogan: Tajiron ki Awaaz, Sahiwal ki Tarraqi!`, image: '/tariq_pic 1.jpg' },
+  { name: 'Sahiwal ki Tarraqi', category: 'Executive Committee Member', text: 'Ittehad Group, Democratic Group aur Apna Group ke saath business community ki mazboot numayindagi.', image: '/tariq_pic 2.jpg' },
 ];
 
 export default function Home() {
@@ -101,7 +101,7 @@ export default function Home() {
 
       <main id="main-content">
         <section id="hero" aria-label={`${CANDIDATE} campaign hero`}>
-          <div className="hero-bg-carousel"><div className="hero-bg-track" ref={heroBgRef}>{SLIDES.map((slide, index) => <div className="hero-bg-slide" key={index}><Image src="/hero section.jpg" alt={`${CANDIDATE} campaign`} fill sizes="100vw" style={{ objectFit: 'cover' }} priority={index === 0} /></div>)}</div><div className="hero-bg-overlay" /></div>
+          <div className="hero-bg-carousel"><div className="hero-bg-track" ref={heroBgRef}>{SLIDES.map((slide, index) => <div className="hero-bg-slide" key={index}><Image src={slide.image} alt={`${CANDIDATE} campaign portrait`} fill sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'center' }} priority={index === 0} /></div>)}</div><div className="hero-bg-overlay" /></div>
           <div className="hero-mesh" /><div className="hero-noise" />
           <div className="hero-content">
             <div className="hero-text reveal from-left"><div className="hero-badge"><div className="hero-badge-dot" /> Elections 2026-28</div><h1 className="hero-title"><span className="brand-a">Sahiwal Chamber</span> <span className="brand-one">Elections</span><span className="subtitle">{CANDIDATE} · Owner of Boby Shoes</span></h1><div className="hero-typewriter"><span className="typewriter-label">Our vision:</span><span className="typewriter-text">{typeText}</span><span className="typewriter-cursor">|</span></div><p className="hero-desc">Vote &amp; Support {CANDIDATE} (Boby Shoes). Slogan: Tajiron ki Awaaz, Sahiwal ki Tarraqi!</p><div className="hero-btns"><a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary"><span>🤝</span><span>Rabta Karein (WhatsApp)</span></a><button className="btn-secondary" onClick={share}><span>📢</span><span>Doston ko Share Karein</span></button></div><div className="hero-stats"><div className="hero-stat"><span className="hero-stat-num">2026-28</span><span className="hero-stat-label">Election Session</span></div><div className="hero-stat"><span className="hero-stat-num">SLCCI</span><span className="hero-stat-label">Target Body</span></div><div className="hero-stat"><span className="hero-stat-num">01</span><span className="hero-stat-label">Executive Seat</span></div></div></div>
