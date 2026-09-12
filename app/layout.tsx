@@ -7,14 +7,13 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://tariq-ahmed-bhatti
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Tariq Ahmed Bhatti | Sahiwal Chamber Elections 2026-28",
-    template: "%s | Tariq Ahmed Bhatti Campaign",
+    default: "Tariq Ahmetti (Boby Shoes) - Candidate SLCCI Elections 2026-28",
+    template: "%s | Tariq Ahmetti Campaign",
   },
-  description: "Vote and support Tariq Ahmed Bhatti, Owner of Boby Shoes, for Executive Committee Member (Associate Class) in Sahiwal Chamber Elections 2026-28.",
+  description: "Vote and Support Tariq Ahmetti (Boby Shoes) for Executive Member Associate Class in Sahiwal Chamber of Commerce & Industry (SLCCI) Elections 2026-28.",
   keywords: [
-    "Tariq Ahmed Bhatti", "Sahiwal Chamber Elections 2026-28", "SLCCI election",
-    "Boby Shoes Sahiwal", "Sahiwal business community", "Executive Committee Member",
-    "Associate Class", "Ittehad Group", "Democratic Group", "Apna Group",
+    "Tariq Ahmetti", "Boby Shoes Sahiwal", "SLCCI Elections",
+    "Sahiwal Chamber Election 2026", "Associate Class Candidate Sahiwal",
   ],
   authors: [{ name: "Tariq Ahmed Bhatti", url: SITE_URL }],
   creator: "Tariq Ahmed Bhatti Campaign",
@@ -22,18 +21,21 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } },
   alternates: { canonical: SITE_URL },
   openGraph: {
-    type: "website", locale: "en_PK", url: SITE_URL, siteName: "Tariq Ahmed Bhatti Campaign",
-    title: "Tariq Ahmed Bhatti | Sahiwal Chamber Elections 2026-28",
-    description: "Tajiron ki Awaaz, Sahiwal ki Tarraqi! Vote and support Tariq Ahmed Bhatti for SLCCI Executive Committee Member.",
+    type: "website", locale: "en_PK", url: SITE_URL, siteName: "Tariq Ahmetti Campaign",
+    title: "Tariq Ahmetti (Boby Shoes) - Candidate SLCCI Elections 2026-28",
+    description: "Vote and Support Tariq Ahmetti (Boby Shoes) for Executive Member Associate Class in Sahiwal Chamber of Commerce & Industry (SLCCI) Elections 2026-28.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tariq Ahmed Bhatti | Sahiwal Chamber Elections 2026-28",
-    description: "Vote and support Tariq Ahmed Bhatti, Owner of Boby Shoes, for SLCCI Executive Committee Member.",
+    title: "Tariq Ahmetti (Boby Shoes) - Candidate SLCCI Elections 2026-28",
+    description: "Vote and Support Tariq Ahmetti (Boby Shoes) for Executive Member Associate Class in Sahiwal Chamber of Commerce & Industry (SLCCI) Elections 2026-28.",
   },
   icons: { icon: [{ url: "/favicon.ico" }, { url: "/icon-192.png", sizes: "192x192", type: "image/png" }], apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }] },
   manifest: "/manifest.webmanifest",
   category: "business",
+  verification: {
+    google: "R_d4ABIq7OPlo679yrddl7e5w4YpNJs770wvcghVD2I",
+  },
 };
 
 const candidateSchema = {
