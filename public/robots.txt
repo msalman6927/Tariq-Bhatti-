@@ -3,5 +3,5 @@ Allow: /
 Disallow: /api/
 Disallow: /_next/
 
-Sitemap: https://tariq-ahmed-bhatti-sahiwal.vercel.app/sitemap.xml
-Host: https://tariq-ahmed-bhatti-sahiwal.vercel.app
+Sitemap: https://tariqahmedbhatti.netlify.app/
+Host: https://tariqahmedbhatti.netlify.app/

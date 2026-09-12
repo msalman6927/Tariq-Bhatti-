@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import FontLoader from "./FontLoader";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://tariq-ahmed-bhatti-sahiwal.vercel.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://tariqahmedbhatti.netlify.app/";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

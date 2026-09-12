@@ -10,4 +10,4 @@ Doctype: HTML5
 IDE: VS Code
 
 /* THANKS */
-Next.js, Vercel, Tailwind CSS, Unsplash
+Next.js, netlify, Tailwind CSS, Unsplash
