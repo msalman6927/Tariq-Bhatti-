@@ -3,5 +3,5 @@ Allow: /
 Disallow: /api/
 Disallow: /_next/
 
-Sitemap: https://tariqahmedbhatti.netlify.app/
-Host: https://tariqahmedbhatti.netlify.app/
+Sitemap: https://tariqahmedbhatti.netlify.app/sitemap.xml
+Host: https://tariqahmedbhatti.netlify.app
